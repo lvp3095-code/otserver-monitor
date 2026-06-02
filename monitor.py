@@ -6,7 +6,6 @@ import os
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 DATA_FILE = "last_levels.json"
 
-# 🔽 SEUS 5 PERSONAGENS
 PLAYERS = {
     "Player1": "https://dbolegacy.online/characterprofile.php?name=ADA%20todaVIDA",
     "Player2": "https://dbolegacy.online/characterprofile.php?name=A%20L%20D%20E%20B%20A%20R%20O%20N",
@@ -36,8 +35,9 @@ def get_level(url):
     response = requests.get(url, headers=HEADERS, timeout=30)
     html = response.text
 
+    # 🔥 BUSCA PELO HTML REAL DO SITE
     match = re.search(
-        r"Level\s*:\s*[\r\n\s]*([0-9]+)",
+        r'<b\s+class="lvl-highlight">\s*([0-9]+)\s*</b>',
         html,
         re.IGNORECASE
     )
@@ -52,7 +52,6 @@ def get_level(url):
 
 def notify(player, old, new):
     diff = new - old
-
     requests.post(
         WEBHOOK,
         json={
