@@ -27,9 +27,16 @@ def save_levels(levels):
 
 def get_level(url):
     html = requests.get(url, timeout=30).text
-    match = re.search(r"Level[^0-9]*([0-9]+)", html, re.IGNORECASE)
+
+    match = re.search(
+        r"Level\s*[:]*\s*([0-9]+)",
+        html,
+        re.IGNORECASE | re.MULTILINE
+    )
+
     if not match:
-        raise Exception("Level não encontrado")
+        raise Exception("Level não encontrado na página")
+
     return int(match.group(1))
 
 def notify(player, old, new):
