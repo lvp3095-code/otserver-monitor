@@ -3,7 +3,7 @@ import re
 import json
 import os
 
-URL = "https://SEU_OTSERVER/character.php?name=PLAYER"
+URL = "https://dbolegacy.online/characterprofile.php?name=ADA%20todaVIDA"
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 DATA_FILE = "last_level.json"
 
