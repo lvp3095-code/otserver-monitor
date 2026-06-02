@@ -11,6 +11,7 @@ PLAYERS = {
     "ALDEBARON": "https://dbolegacy.online/characterprofile.php?name=A%20L%20D%20E%20B%20A%20R%20O%20N",
     "Wesllys": "https://dbolegacy.online/characterprofile.php?name=Wesllys",
     "ThuuG ADA": "https://dbolegacy.online/characterprofile.php?name=ThuuG%20ADA",
+    "Zeca Pau Gordinho": "https://dbolegacy.online//characterprofile.php?name=zeca+pau+gordinho",
     "TERRO DELES": "https://dbolegacy.online/characterprofile.php?name=TERRO%20DELES",
 }
 
