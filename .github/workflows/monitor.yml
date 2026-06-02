@@ -2,8 +2,12 @@ name: OTServer Monitor
 
 on:
   schedule:
-    - cron: "*/1 * * * *"   # roda a cada 5 minutos
+    - cron: "*/5 * * * *"   # Corrigido: agora roda a cada 5 minutos (limite mínimo do GitHub)
   workflow_dispatch:
+
+# Permite que o bot do GitHub faça commit e push no seu repositório
+permissions:
+  contents: write
 
 jobs:
   monitor:
@@ -30,8 +34,9 @@ jobs:
 
       - name: Commit level changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add last_levels.json
-          git commit -m "Update player levels" || echo "No changes"
+          # O 'exit 0' garante que o workflow não marque como "falha" se não houver mudanças
+          git commit -m "Update player levels" || exit 0
           git push
