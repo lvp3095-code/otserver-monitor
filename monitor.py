@@ -7,13 +7,9 @@ WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 DATA_FILE = "last_levels.json"
 
 PLAYERS = {
-    "ADA todaVIDA": "https://dbolegacy.online/characterprofile.php?name=ADA%20todaVIDA",
-    "ALDEBARON": "https://dbolegacy.online/characterprofile.php?name=A%20L%20D%20E%20B%20A%20R%20O%20N",
-    "Zoi": "https://dbolegacy.online/characterprofile.php?name=Zoi",
-    "ThuuG ADA": "https://dbolegacy.online/characterprofile.php?name=ThuuG%20ADA",
-    "Wesllys": "https://dbolegacy.online//characterprofile.php?name=Wesllys",
-    "Luizinho": "https://dbolegacy.online//characterprofile.php?name=Luizinho",
-    "TERRO DELES": "https://dbolegacy.online/characterprofile.php?name=TERRO%20DELES",
+    "ADA todaVIDA": "=ADA%20todaVIDA",
+    "ALDEBARON": "%20L%20D%20E%20B%20A%20R%20O%20N",
+
 }
 
 HEADERS = {
